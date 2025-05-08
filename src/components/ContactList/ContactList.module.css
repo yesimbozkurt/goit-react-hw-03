@@ -1,0 +1,43 @@
+ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+li {
+
+    padding: 15px;
+    border: 1px solid #381230;
+    border-radius: 5px;
+    background-color: #9b5b7c;
+    display: flex;
+    gap: 20px;
+}
+
+.contactName {
+    font-weight: bold;
+    color: #381230;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.contactNmbr {
+    font-weight: bold;
+    color: #381230;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.deleteBtn {
+    background-color: #381230;
+    color: rgb(171, 95, 149);
+    border: 1px solid #381230;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 15px;
+    cursor: pointer;
+}

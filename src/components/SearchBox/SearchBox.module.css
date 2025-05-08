@@ -1,0 +1,26 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border: 3px solid #5b2753;
+    border-radius: 15px;
+    background-color: #601c43;
+    padding: 1rem;
+    margin-top: 20px;
+
+}
+
+.form input {
+    padding: 0.5rem;
+    border: 2px solid #53194a;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: #90516f;
+    color: #511648;
+    font-weight: bold;
+}
+
+.form label {
+    font-size: 1.2rem;
+    color: violet;
+}

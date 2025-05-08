@@ -26,7 +26,7 @@ function App() {
   return (
     <>
       <div>
-        <h1>Phonebook</h1>
+        <h1 style={{ color: 'pink' }} >Phonebook</h1>
         <ContactForm />
         <SearchBox searchName={searchName} />
         <ContactList contacts={contacts} filteredName={name} />

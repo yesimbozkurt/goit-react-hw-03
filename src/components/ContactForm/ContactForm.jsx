@@ -23,12 +23,12 @@ const ContactForm = () => {
             onSubmit={() => { }}
             validationSchema={FeedbackSchema}>
             <Form className={ContactFormCss.form}>
-                <div>
+                <div className={ContactFormCss.formGroup}>
                     <label htmlFor={nameId}>Name</label>
                     <Field id={nameId} className={ContactFormCss.field} name='name' />
                     <ErrorMessage name='name' component='span' className={ContactFormCss.error} />
                 </div>
-                <div>
+                <div className={ContactFormCss.formGroup}>
                     <label htmlFor={numberId}>Number</label>
                     <Field id={numberId} className={ContactFormCss.field} name='number' />
                     <ErrorMessage name='number' component='span' className={ContactFormCss.error} />

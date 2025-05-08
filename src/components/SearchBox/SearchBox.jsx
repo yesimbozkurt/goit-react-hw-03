@@ -13,7 +13,7 @@ const SearchBox = ({ searchName }) => {
 
     return (
         <Formik>
-            <Form>
+            <Form className={SearchBoxCss.form}>
                 <label htmlFor={searchId}>Find contacts by name</label>
                 <Field id={searchId}
                     name='search'

@@ -1,0 +1,38 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border: 3px solid rgb(161, 88, 137);
+    border-radius: 15px;
+    padding: 20px;
+    background-color: #e2bbd9;
+    color: rgb(80, 19, 137);
+}
+
+.form input {
+    background-color: rgb(177, 116, 177);
+    color: rgb(80, 19, 137);
+    border: 2px solid rgb(161, 88, 137);
+    border-radius: 5px;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+.button {
+    background-color: rgb(161, 88, 137);
+    color: rgb(80, 19, 137);
+    border: 2px solid rgb(161, 88, 137);
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: rgb(69, 36, 100);
+    color: rgb(161, 88, 137);
+}
