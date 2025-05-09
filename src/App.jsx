@@ -18,7 +18,7 @@ function App() {
 
 
   const handleAddContact = (newContact) => {
-    console.log(newContact)
+
     setContacts(prevContacts => [...prevContacts, newContact]);
   };
 
@@ -31,7 +31,7 @@ function App() {
   const [name, setName] = useState('')
 
   const searchName = (name) => {
-    console.log(name)
+
     setName(name)
   }
 
