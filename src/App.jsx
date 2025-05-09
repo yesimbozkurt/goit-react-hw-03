@@ -10,7 +10,7 @@ function App() {
 
   const localContact = JSON.parse(localStorage.getItem("contacts"));
 
-  const [contacts, setContacts] = useState(localContact);
+  const [contacts, setContacts] = useState(localContact || []);
 
   useEffect(() => {
     localStorage.setItem("contacts", JSON.stringify(contacts));
@@ -20,6 +20,7 @@ function App() {
   const handleAddContact = (newContact) => {
 
     setContacts(prevContacts => [...prevContacts, newContact]);
+
   };
 
   const handleDeleteContact = (contactToDelete) => {
