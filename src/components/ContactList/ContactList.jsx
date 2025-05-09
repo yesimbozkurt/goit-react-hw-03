@@ -14,10 +14,9 @@ const ContactList = ({ contacts, filteredName, handleDeleteContact }) => {
 
     }
     return (
-
+        console.log(filteredContacts(contacts, filteredName)),
         <ul className={ContactListCss.contactList}>
-            {filteredContacts(contacts, filteredName).map((contact) => (
-
+            {/* {filteredContacts(contacts, filteredName).map((contact) => (
                 <Contact
                     key={contact.id}
                     id={contact.id}
@@ -26,7 +25,7 @@ const ContactList = ({ contacts, filteredName, handleDeleteContact }) => {
                     handleDeleteContact={handleDeleteContact}
                 />
 
-            ))}
+            ))} */}
         </ul>
 
     )
