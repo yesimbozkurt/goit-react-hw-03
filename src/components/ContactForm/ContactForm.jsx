@@ -20,6 +20,7 @@ const ContactForm = ({ onAddContact }) => {
     const numberId = nanoid();
 
     const handleSubmit = (values, actions) => {
+
         const newContact = {
             id: nanoid(),
             name: values.name,
@@ -43,9 +44,7 @@ const ContactForm = ({ onAddContact }) => {
                     <Field id={numberId} className={ContactFormCss.field} name='number' />
                     <ErrorMessage name='number' component='span' className={ContactFormCss.error} />
                 </div>
-                <button onClick={() => {
-                    handleSubmit({ nameId, numberId })
-                }} type='submit' className={ContactFormCss.button}>Add contact</button>
+                <button type='submit' className={ContactFormCss.button}>Add contact</button>
             </Form>
 
         </Formik >
