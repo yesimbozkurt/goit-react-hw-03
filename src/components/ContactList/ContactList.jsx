@@ -14,21 +14,21 @@ const ContactList = ({ contacts, filteredName, handleDeleteContact }) => {
 
     }
     return (
-        <>
-            <ul className={ContactListCss.contactList}>
-                {filteredContacts(contacts, filteredName).map(contact =>
 
-                    <Contact
-                        key={contact.id}
-                        id={contact.id}
-                        name={contact.name}
-                        number={contact.number}
-                        handleDeleteContact={handleDeleteContact}
-                    />
+        <ul className={ContactListCss.contactList}>
+            {filteredContacts(contacts, filteredName).map(contact => (
 
-                )}
-            </ul>
-        </>
+                <Contact
+                    key={contact.id}
+                    id={contact.id}
+                    name={contact.name}
+                    number={contact.number}
+                    handleDeleteContact={handleDeleteContact}
+                />
+
+            ))}
+        </ul>
+
     )
 }
 
