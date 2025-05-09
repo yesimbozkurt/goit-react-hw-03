@@ -16,7 +16,7 @@ const ContactList = ({ contacts, filteredName, handleDeleteContact }) => {
     return (
 
         <ul className={ContactListCss.contactList}>
-            {filteredContacts(contacts, filteredName).map(contact => (
+            {filteredContacts(contacts, filteredName).map((contact) => (
 
                 <Contact
                     key={contact.id}
