@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import ContactForm from './components/ContactForm/ContactForm'
 import SearchBox from './components/SearchBox/SearchBox'
@@ -16,19 +16,36 @@ function App() {
     ]
   );
 
+  useEffect(() => {
+    localStorage.setItem("contacts", JSON.stringify(contacts));
+  }, [contacts]);
+
+
 
   const handleAddContact = (newContact) => {
-    const updatedContacts = [...contacts, newContact];
-    setContacts(updatedContacts);
-    localStorage.setItem("contacts", JSON.stringify(updatedContacts));
+    setContacts(prevContacts => [...prevContacts, newContact]);
   };
 
 
-  const handleDeleteContact = (id) => {
-    const updatedContacts = contacts.filter(contact => contact.id !== id);
-    setContacts(updatedContacts);
-    localStorage.setItem("contacts", JSON.stringify(updatedContacts));
+  // const handleAddContact = (newContact) => {
+  //   const updatedContacts = [...contacts, newContact];
+  //   setContacts(updatedContacts);
+  //   localStorage.setItem("contacts", JSON.stringify(updatedContacts));
+  // };
+
+  const handleDeleteContact = (contactToDelete) => {
+    setContacts(prevContacts =>
+      prevContacts.filter(contact => contact.id !== contactToDelete.id)
+    );
   };
+
+
+
+  // const handleDeleteContact = (id) => {
+  //   const updatedContacts = contacts.filter(contact => contact.id !== id);
+  //   setContacts(updatedContacts);
+  //   localStorage.setItem("contacts", JSON.stringify(updatedContacts));
+  // };
 
   const [name, setName] = useState('')
 
@@ -43,7 +60,7 @@ function App() {
         <h1 style={{ color: 'pink' }} >Phonebook</h1>
         <ContactForm onAddContact={handleAddContact} />
         <SearchBox searchName={searchName} />
-        <ContactList contacts={contacts} filteredName={name} onDelete={handleDeleteContact} />
+        <ContactList contacts={contacts} filteredName={name} handleDeleteContact={handleDeleteContact} />
       </div>
 
     </>

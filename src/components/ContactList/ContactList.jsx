@@ -3,7 +3,7 @@ import ContactListCss from './ContactList.module.css'
 import Contact from './Contact'
 
 
-const ContactList = ({ contacts, filteredName }) => {
+const ContactList = ({ contacts, filteredName, handleDeleteContact }) => {
     const filteredContacts = (contacts, filteredName) => {
         if (filteredName === '') {
             return contacts
@@ -20,8 +20,11 @@ const ContactList = ({ contacts, filteredName }) => {
                     return (
                         <Contact
                             key={contact.id}
+                            id={contact.id}
                             name={contact.name}
-                            number={contact.number} />
+                            number={contact.number}
+                            handleDeleteContact={handleDeleteContact}
+                        />
                     )
                 })}
             </ul>

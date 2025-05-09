@@ -19,20 +19,18 @@ const ContactForm = ({ onAddContact }) => {
     const nameId = nanoid();
     const numberId = nanoid();
 
-    const handleSubmit = (values) => {
+    const handleSubmit = (values, actions) => {
         const newContact = {
             id: nanoid(),
             name: values.name,
             number: values.number
         };
         onAddContact(newContact);
+        actions.resetForm();
     };
     return (
         <Formik initialValues={{ name: '', number: '' }}
-            onSubmit={(values, actions) => {
-                handleSubmit(values);
-                actions.resetForm();
-            }}
+            onSubmit={handleSubmit}
             validationSchema={FeedbackSchema}>
             <Form className={ContactFormCss.form}>
                 <div className={ContactFormCss.formGroup}>
