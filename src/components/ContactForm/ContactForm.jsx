@@ -5,7 +5,7 @@ import { nanoid } from 'nanoid'
 import * as Yup from "yup";
 
 
-const ContactForm = () => {
+const ContactForm = ({ onAddContact }) => {
     const FeedbackSchema = Yup.object().shape({
         name: Yup.string()
             .min(3, 'Too Short!')
@@ -18,9 +18,21 @@ const ContactForm = () => {
     });
     const nameId = nanoid();
     const numberId = nanoid();
+
+    const handleSubmit = (values) => {
+        const newContact = {
+            id: nanoid(),
+            name: values.name,
+            number: values.number
+        };
+        onAddContact(newContact);
+    };
     return (
-        <Formik initialValues={{}}
-            onSubmit={() => { }}
+        <Formik initialValues={{ name: '', number: '' }}
+            onSubmit={(values, actions) => {
+                handleSubmit(values);
+                actions.resetForm();
+            }}
             validationSchema={FeedbackSchema}>
             <Form className={ContactFormCss.form}>
                 <div className={ContactFormCss.formGroup}>
@@ -33,10 +45,12 @@ const ContactForm = () => {
                     <Field id={numberId} className={ContactFormCss.field} name='number' />
                     <ErrorMessage name='number' component='span' className={ContactFormCss.error} />
                 </div>
-                <button type='submit' className={ContactFormCss.button}>Add contact</button>
+                <button onClick={() => {
+                    handleSubmit({ nameId, numberId })
+                }} type='submit' className={ContactFormCss.button}>Add contact</button>
             </Form>
 
-        </Formik>
+        </Formik >
     )
 }
 
