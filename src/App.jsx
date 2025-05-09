@@ -24,9 +24,6 @@ function App() {
   };
 
 
-
-
-
   const handleDeleteContact = (id) => {
     const updatedContacts = contacts.filter(contact => contact.id !== id);
     setContacts(updatedContacts);
@@ -39,7 +36,6 @@ function App() {
     console.log(name)
     setName(name)
   }
-
 
   return (
     <>
