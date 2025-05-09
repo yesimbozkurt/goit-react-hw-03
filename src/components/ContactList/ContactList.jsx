@@ -13,19 +13,20 @@ const ContactList = ({ contacts, filteredName, handleDeleteContact }) => {
         )
 
     }
+    const sortedContacts = filteredContacts(contacts, filteredName);
     return (
-        console.log(filteredContacts(contacts, filteredName)),
         <ul className={ContactListCss.contactList}>
-            {/* {filteredContacts(contacts, filteredName).map((contact) => (
-                <Contact
-                    key={contact.id}
-                    id={contact.id}
-                    name={contact.name}
-                    number={contact.number}
-                    handleDeleteContact={handleDeleteContact}
-                />
-
-            ))} */}
+            {sortedContacts
+                ? sortedContacts.map((contact) => (
+                    <Contact
+                        key={contact.id}
+                        id={contact.id}
+                        name={contact.name}
+                        number={contact.number}
+                        handleDeleteContact={handleDeleteContact}
+                    />
+                ))
+                : null}
         </ul>
 
     )
